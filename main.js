@@ -10,12 +10,56 @@ $(document).ready(function() {
       goPrev() ;
     };
   });
+
+  $("i.last").click( function(){
+
+    removeActive();
+
+    $("i.last").addClass("active");
+    $("img.last").addClass("active");
+
+  });
+
+  $("i.first").click( function(){
+
+    removeActive();
+
+    $("i.first").addClass("active");
+    $("img.first").addClass("active");
+
+  });
+
+  $("i:nth-child(2)").click( function(){
+
+    removeActive();
+
+    $("i:nth-child(2)").addClass("active");
+    $("img:nth-child(2)").addClass("active");
+
+  });
+
+  $("i:nth-child(3)").click( function(){
+
+    removeActive();
+
+    $("i:nth-child(3)").addClass("active");
+    $("img:nth-child(3)").addClass("active");
+
+  })
+
 });
 
 
 
 
 // FUNZIONI
+function removeActive() {
+  var currentImg= $("img.active");
+  var currentIcon= $("i.active");
+  currentImg.removeClass("active");
+  currentIcon.removeClass("active");
+}
+
 
 function goNext() {
   var currentImg= $("img.active");
@@ -25,7 +69,7 @@ function goNext() {
   var nextIcon = $("i.active").next();
 
   currentImg.removeClass("active");
-  currentIcon.removeClass("active")
+  currentIcon.removeClass("active");
 
   if (currentImg.hasClass("last")) {
     $("img.first").addClass("active");

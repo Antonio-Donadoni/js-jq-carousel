@@ -1,9 +1,15 @@
 $(document).ready(function() {
 
+  $(".next").click(goNext);
+  $(".prev").click(goPrev);
 
-$(".next").click(goNext);
-$(".prev").click(goPrev);
-
+  $(document).keydown( function() {
+    if (event.which == 39) {
+      goNext() ;
+    } else if ( event.which == 37) {
+      goPrev() ;
+    };
+  });
 });
 
 
@@ -25,8 +31,8 @@ function goNext() {
     $("img.first").addClass("active");
     $("i.first").addClass("active");
   } else
-  nextImg.addClass("active");
-  nextIcon.addClass("active");
+    nextImg.addClass("active");
+    nextIcon.addClass("active");
 }
 
 function goPrev() {
@@ -43,6 +49,6 @@ function goPrev() {
     $("img.last").addClass("active");
     $("i.last").addClass("active");
   } else
-  prevImg.addClass("active");
-  prevIcon.addClass("active");
+    prevImg.addClass("active");
+    prevIcon.addClass("active");
 }

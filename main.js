@@ -11,41 +11,15 @@ $(document).ready(function() {
     };
   });
 
-  $("i.last").click( function(){
+  $('i.fas').click(function() {
+      var index = $(this).index();
+      index = index + 1;
+      console.log($(this).index()); // posizione dell'elemento (i) nel div.nav ---> 0,1,2...
+      var imageToShow = $('img:nth-child(' + index + ')');
 
-    removeActive();
-
-    $("i.last").addClass("active");
-    $("img.last").addClass("active");
-
-  });
-
-  $("i.first").click( function(){
-
-    removeActive();
-
-    $("i.first").addClass("active");
-    $("img.first").addClass("active");
-
-  });
-
-  $("i:nth-child(2)").click( function(){
-
-    removeActive();
-
-    $("i:nth-child(2)").addClass("active");
-    $("img:nth-child(2)").addClass("active");
-
-  });
-
-  $("i:nth-child(3)").click( function(){
-
-    removeActive();
-
-    $("i:nth-child(3)").addClass("active");
-    $("img:nth-child(3)").addClass("active");
-
-  })
+      removeActive();
+      $(this).addClass("active");
+      imageToShow.addClass("active"); });
 
 });
 
